@@ -9,7 +9,8 @@ import { auth, createUserProfileDocument } from './firebase/firebase.utils'
 
 class App extends React.Component {
   constructor(){
-    super()
+    super();
+
     this.state = {
       currentUser: null
     }
@@ -23,23 +24,26 @@ class App extends React.Component {
         const userRef = await createUserProfileDocument(userAuth);
 
         userRef.onSnapshot(snapShot => {
-
           this.setState({
             currentUser: {
               id: snapShot.id,
               ...snapShot.data()
             }
-          }, ()=> { console.log(this.state)});
+          });
         });
-      } else {
-      this.setState({ currentUser: userAuth });
-    }
+
+      }
+
+     this.setState({ currentUser: userAuth });
+
+     console.log(this.state)
     });
   }
 
   componentWillUnmount(){
     this.unsubscribeFromAuth();
   }
+
   render(){
     return (<div>
       <Header currentUser={this.state.currentUser}/>
