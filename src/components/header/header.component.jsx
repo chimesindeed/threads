@@ -14,6 +14,7 @@ import './header.styles.scss'
 const Header = ({ currentUser, hidden }) => {
 
   return (
+
     <div className='header'>
       <Link className='logo-container' to='/'>
       <Logo className='logo'/>
@@ -33,6 +34,7 @@ const Header = ({ currentUser, hidden }) => {
       }
 
       <CartIcon />
+
     </div>
     {
       hidden ? null : <CartDropDown />
