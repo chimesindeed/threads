@@ -17,13 +17,22 @@
     }
   }
   .name,
-  .quantity,
-  .price {
+  .price { width: 23% }
+
+  .quantity-grouping {
+    display: flex;
+    flex-direction: row;
     width: 23%;
   }
-
   .quantity {
     padding-left: 20px;
+    padding-right: 20px;
+  }
+  .add-item-button {
+  }
+
+  .remove-item-button {
+
   }
 
   .remove-button {
