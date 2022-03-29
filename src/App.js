@@ -49,6 +49,12 @@ class App extends React.Component {
         <Route path='/shop' element={<ShopPage />}/>
         <Route path='/checkout' element={<CheckoutPage/>}/>
         <Route path='/signin' element={<SignInAndSignUpPage/>}/>
+        <Route path='/signin' render={
+            ()=>{ return this.props.currentUser
+              ? (<Navigate to='/' />)
+              : (<SignInAndSignUpPage />)
+            }
+        } />
       </Routes>
     </div>)
   }
